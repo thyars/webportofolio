@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Backend Developer & Embedded Systems Portfolio</title>
+  <meta name="description" content="Portofolio profesional Backend Developer dan Embedded Web Server. Spesialis arsitektur custom PHP MVC, MySQL prepared statements, dan sistem IoT ESP32.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Background Glow & Grid Elements -->
+  <div class="bg-grid-pattern" aria-hidden="true"></div>
+  <div class="glow-orb glow-top-left" aria-hidden="true"></div>
+  <div class="glow-orb glow-bottom-right" aria-hidden="true"></div>
+
+  <!-- NAVIGATION -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo" id="nav-brand-logo">
+        <span class="logo-code">&lt;/&gt;</span>
+        <span class="logo-text">DevPortfolio<span class="dot-accent">.</span></span>
+      </a>
+
+      <nav class="nav-links" id="desktop-nav" aria-label="Navigasi Utama">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">Tentang</a>
+        <a href="#skills" class="nav-link">Keahlian</a>
+        <a href="#projects" class="nav-link">Proyek</a>
+        <a href="#experience" class="nav-link">Pengalaman</a>
+        <a href="#education" class="nav-link">Pendidikan</a>
+        <a href="#contact" class="nav-link">Kontak</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#contact" class="btn btn-outline btn-sm nav-cta-btn" id="nav-contact-btn">Hubungi</a>
+        <button class="mobile-toggle-btn" id="mobile-toggle-btn" aria-label="Buka Menu Navigasi" aria-expanded="false" aria-controls="mobile-nav">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Nav -->
+    <div class="mobile-drawer" id="mobile-nav">
+      <nav class="mobile-links" aria-label="Navigasi Mobile">
+        <a href="#home" class="mobile-link">Home</a>
+        <a href="#about" class="mobile-link">Tentang</a>
+        <a href="#skills" class="mobile-link">Keahlian</a>
+        <a href="#projects" class="mobile-link">Proyek</a>
+        <a href="#experience" class="mobile-link">Pengalaman</a>
+        <a href="#education" class="mobile-link">Pendidikan</a>
+        <a href="#contact" class="mobile-link">Kontak</a>
+      </nav>
+      <div class="mobile-drawer-footer">
+        <a href="#contact" class="btn btn-primary btn-block">Kirim Pesan</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="home">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="badge hero-badge">
+            <span class="pulse-indicator"></span>
+            Siap untuk Peluang Backend & Embedded System
+          </div>
+          <h1 class="hero-title" id="main-heading">
+            Membangun Sistem Backend <span class="text-gradient">Terstruktur & Aman</span> dari Web ke IoT
+          </h1>
+          <p class="hero-description">
+            Mahasiswa <strong>Teknik Rekayasa Internet (PENS)</strong> dengan spesialisasi <strong>Backend Developer</strong>. Berpengalaman merancang arsitektur <em>Custom PHP MVC</em> mandiri, manajemen database MySQL dengan <em>prepared statements</em>, serta integrasi <em>embedded web server</em> ESP32.
+          </p>
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary" id="hero-btn-projects">
+              <span>Jelajahi Proyek</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#contact" class="btn btn-secondary" id="hero-btn-contact">
+              <span>Hubungi Saya</span>
+            </a>
+          </div>
+
+          <!-- Highlight Metrics Bar -->
+          <div class="hero-metrics">
+            <div class="metric-item">
+              <span class="metric-label">Target Role</span>
+              <span class="metric-value">Backend Developer</span>
+            </div>
+            <div class="metric-divider"></div>
+            <div class="metric-item">
+              <span class="metric-label">Spesialisasi</span>
+              <span class="metric-value">PHP MVC & MySQL</span>
+            </div>
+            <div class="metric-divider"></div>
+            <div class="metric-item">
+              <span class="metric-label">Keunggulan</span>
+              <span class="metric-value">Embedded Web Server</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Interactive CLI Terminal -->
+        <div class="hero-terminal-wrapper">
+          <div class="terminal-card" id="cli-terminal-window">
+            <div class="terminal-header">
+              <div class="terminal-dots">
+                <span class="dot red" title="Close"></span>
+                <span class="dot yellow" title="Minimize"></span>
+                <span class="dot green" title="Maximize"></span>
+              </div>
+              <span class="terminal-title">guest@pens-server:~ (bash)</span>
+              <span class="terminal-lang">Interactive CLI</span>
+            </div>
+            
+            <!-- Terminal Output Log Container -->
+            <div class="terminal-body cli-screen" id="cli-screen" tabindex="0" role="region" aria-label="Terminal CLI Output">
+              <div class="cli-output" id="cli-output">
+                <div class="cli-banner">
+                  <div class="cli-brand">Backend &amp; Embedded System OS v2.4</div>
+                  <div class="cli-subtext">Selamat datang di interactive terminal. Ketik <span class="cmd-highlight">help</span> untuk melihat daftar perintah.</div>
+                </div>
+              </div>
+
+              <!-- Interactive Input Row -->
+              <div class="cli-input-row">
+                <span class="cli-prompt"><span class="user-host">guest@pens</span>:<span class="path">~</span>$</span>
+                <input type="text" id="cli-input" class="cli-input-field" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="ketik perintah di sini (misal: help)..." aria-label="Terminal Command Input">
+              </div>
+            </div>
+
+            <!-- Quick Command Chips for Touch / Mobile Convenience -->
+            <div class="cli-quick-bar">
+              <span class="quick-label">Perintah Cepat:</span>
+              <div class="quick-chips">
+                <button type="button" class="chip-btn" data-cmd="help">help</button>
+                <button type="button" class="chip-btn" data-cmd="whoami">whoami</button>
+                <button type="button" class="chip-btn" data-cmd="skills">skills</button>
+                <button type="button" class="chip-btn" data-cmd="projects">projects</button>
+                <button type="button" class="chip-btn" data-cmd="ping esp32">ping esp32</button>
+                <button type="button" class="chip-btn" data-cmd="clear">clear</button>
+              </div>
+            </div>
+
+            <div class="terminal-footer">
+              <div class="terminal-status"><span class="status-dot"></span> CLI Engine Ready</div>
+              <div class="terminal-tags">
+                <span class="badge-tag">Bash 5.2</span>
+                <span class="badge-tag">IoT Gateway</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="section about-section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">01. Profil</span>
+          <h2 class="section-title">Tentang Saya</h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-card about-narrative">
+            <h3 class="about-subtitle">Fondasi Rekayasa Internet & Minat Backend Web</h3>
+            <p>
+              Saya adalah mahasiswa <strong>Teknik Rekayasa Internet</strong> di <strong>Politeknik Elektronika Negeri Surabaya (PENS)</strong> yang berfokus pada pengembangan sistem backend web dan integrasi <em>embedded web server</em>. Berawal dari latar belakang rekayasa internet dan sistem terbenam, saya terbiasa memahami bagaimana data mengalir dari sensor perangkat keras hingga diproses dan disimpan secara andal oleh server.
+            </p>
+            <p>
+              Dalam pengembangan web, saya memilih mendalami fondasi arsitektur perangkat lunak dengan membangun aplikasi PHP berbasis arsitektur <strong>MVC dan sistem router mandiri tanpa bergantung pada framework pihak ketiga</strong>. Fokus utama saya adalah memastikan alur logika server terstruktur, mengoptimalkan interaksi database MySQL menggunakan <em>prepared statements</em>, serta menerapkan praktik keamanan dasar seperti pencegahan IDOR, pengamanan sesi, dan autentikasi bertingkat.
+            </p>
+            <div class="about-key-points">
+              <div class="key-point-item">
+                <div class="key-icon">🛡️</div>
+                <div>
+                  <strong>Fokus Keamanan</strong>
+                  <span>Prepared Statements, Proteksi Rute, & Mitigasi IDOR</span>
+                </div>
+              </div>
+              <div class="key-point-item">
+                <div class="key-icon">⚙️</div>
+                <div>
+                  <strong>Arsitektur Mandiri</strong>
+                  <span>Pola MVC, Router Bersih, & Pemisahan Tanggung Jawab</span>
+                </div>
+              </div>
+              <div class="key-point-item">
+                <div class="key-icon">📡</div>
+                <div>
+                  <strong>Jembatan Hardware-Web</strong>
+                  <span>Menyajikan Web Server Langsung dari Mikrokontroler ESP32</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-card about-quick-facts">
+            <h3 class="about-subtitle">Informasi Singkat</h3>
+            <ul class="facts-list">
+              <li>
+                <span class="fact-label">Peran Target</span>
+                <span class="fact-val highlight">Backend Developer / Embedded Web Server</span>
+              </li>
+              <li>
+                <span class="fact-label">Pendidikan</span>
+                <span class="fact-val">S1 Teknik Rekayasa Internet</span>
+              </li>
+              <li>
+                <span class="fact-label">Kampus</span>
+                <span class="fact-val">Politeknik Elektronika Negeri Surabaya (PENS)</span>
+              </li>
+              <li>
+                <span class="fact-label">Lingkungan Dev</span>
+                <span class="fact-val">Laragon, Arduino IDE</span>
+              </li>
+              <li>
+                <span class="fact-label">Status</span>
+                <span class="fact-val status-badge-online">Tersedia untuk Kerja / Magang</span>
+              </li>
+            </ul>
+
+            <div class="card-quote">
+              <p>"Saya menyukai tantangan menyelesaikan masalah seputar keandalan alur data, integritas basis data, dan komunikasi sistem."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section class="section skills-section" id="skills">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">02. Kemampuan</span>
+          <h2 class="section-title">Keahlian Teknis</h2>
+          <p class="section-desc">Kumpulan teknologi dan pustaka yang benar-benar saya kuasai dan terapkan dalam proyek nyata.</p>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Backend Card -->
+          <div class="skill-category-card">
+            <div class="skill-header">
+              <div class="skill-icon-box backend-accent">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 17l6-6-6-6M12 19h8"/></svg>
+              </div>
+              <div>
+                <h3 class="skill-group-title">Backend Development</h3>
+                <span class="skill-count">Arsitektur & Server</span>
+              </div>
+            </div>
+            <ul class="skill-items">
+              <li>
+                <span class="skill-name">Custom PHP MVC</span>
+                <span class="skill-tag">Arsitektur Mandiri</span>
+              </li>
+              <li>
+                <span class="skill-name">Custom Request Routing</span>
+                <span class="skill-tag">Dispatcher</span>
+              </li>
+              <li>
+                <span class="skill-name">Autentikasi & Session</span>
+                <span class="skill-tag">Timeout & Proteksi</span>
+              </li>
+              <li>
+                <span class="skill-name">Embedded Web Server</span>
+                <span class="skill-tag">ESP32 Hosted</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Database Card -->
+          <div class="skill-category-card">
+            <div class="skill-header">
+              <div class="skill-icon-box db-accent">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+              </div>
+              <div>
+                <h3 class="skill-group-title">Database</h3>
+                <span class="skill-count">Relasional & Keamanan</span>
+              </div>
+            </div>
+            <ul class="skill-items">
+              <li>
+                <span class="skill-name">MySQL (mysqli)</span>
+                <span class="skill-tag">Relational DB</span>
+              </li>
+              <li>
+                <span class="skill-name">Prepared Statements</span>
+                <span class="skill-tag">SQL Injection Guard</span>
+              </li>
+              <li>
+                <span class="skill-name">Schema Engineering</span>
+                <span class="skill-tag">schema.sql</span>
+              </li>
+              <li>
+                <span class="skill-name">Data Normalization</span>
+                <span class="skill-tag">Struktur Tabel</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Languages Card -->
+          <div class="skill-category-card">
+            <div class="skill-header">
+              <div class="skill-icon-box lang-accent">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              </div>
+              <div>
+                <h3 class="skill-group-title">Programming Languages</h3>
+                <span class="skill-count">Core Development</span>
+              </div>
+            </div>
+            <ul class="skill-items">
+              <li>
+                <span class="skill-name">PHP (Native / OOP)</span>
+                <span class="skill-tag">Server Logic</span>
+              </li>
+              <li>
+                <span class="skill-name">C / C++</span>
+                <span class="skill-tag">Arduino / ESP32</span>
+              </li>
+              <li>
+                <span class="skill-name">SQL</span>
+                <span class="skill-tag">Data Queries</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Tools & Libraries Card -->
+          <div class="skill-category-card">
+            <div class="skill-header">
+              <div class="skill-icon-box tool-accent">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+              </div>
+              <div>
+                <h3 class="skill-group-title">Tools & Libraries</h3>
+                <span class="skill-count">Lingkungan & Pustaka</span>
+              </div>
+            </div>
+            <ul class="skill-items">
+              <li>
+                <span class="skill-name">Laragon</span>
+                <span class="skill-tag">Local Server</span>
+              </li>
+              <li>
+                <span class="skill-name">PhpSpreadsheet</span>
+                <span class="skill-tag">Excel Importer</span>
+              </li>
+              <li>
+                <span class="skill-name">FPDF</span>
+                <span class="skill-tag">PDF Generation</span>
+              </li>
+              <li>
+                <span class="skill-name">.env Management</span>
+                <span class="skill-tag">Kredensial Aman</span>
+              </li>
+              <li>
+                <span class="skill-name">Arduino IDE</span>
+                <span class="skill-tag">Firmware Upload</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- IoT & Embedded Card -->
+          <div class="skill-category-card full-span-on-mobile">
+            <div class="skill-header">
+              <div class="skill-icon-box iot-accent">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+              </div>
+              <div>
+                <h3 class="skill-group-title">IoT & Embedded Systems</h3>
+                <span class="skill-count">Hardware & Peripherals</span>
+              </div>
+            </div>
+            <ul class="skill-items">
+              <li>
+                <span class="skill-name">ESP32 Mikrokontroler</span>
+                <span class="skill-tag">WiFi & Web Server</span>
+              </li>
+              <li>
+                <span class="skill-name">Sensor Ultrasonik</span>
+                <span class="skill-tag">Deteksi Jarak Objek</span>
+              </li>
+              <li>
+                <span class="skill-name">LED Dot Matrix 8x8</span>
+                <span class="skill-tag">Tampilan Running Text</span>
+              </li>
+              <li>
+                <span class="skill-name">Modul RFID</span>
+                <span class="skill-tag">Autentikasi Kartu</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section class="section projects-section" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">03. Portofolio</span>
+          <h2 class="section-title">Proyek Unggulan</h2>
+          <p class="section-desc">Studi kasus nyata yang menunjukkan implementasi arsitektur backend, penanganan keamanan, dan integrasi embedded server.</p>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="projects-list">
+          <!-- PROJECT 1: E-VOTING (PRIMARY FOCUS) -->
+          <article class="project-card featured-project" id="project-evoting">
+            <div class="project-badge-row">
+              <span class="project-pill-primary">★ Proyek Utama Backend</span>
+              <span class="project-pill">Aplikasi Organisasi Kampus</span>
+            </div>
+
+            <div class="project-body-grid">
+              <div class="project-main-info">
+                <h3 class="project-title">Sistem E-Voting Kampus Berbasis Custom PHP MVC</h3>
+                <p class="project-role-badge">
+                  <strong>Peran Saya:</strong> Backend Developer & Database Designer
+                </p>
+                <p class="project-summary">
+                  Aplikasi web pemilihan suara digital untuk kebutuhan organisasi himpunan mahasiswa. Dirancang dari nol dengan arsitektur <em>Model-View-Controller</em> (MVC) dan router mandiri tanpa framework pihak ketiga untuk memastikan kontrol penuh terhadap alur data dan keamanan.
+                </p>
+
+                <!-- Problem & Solution Box -->
+                <div class="problem-solution-box">
+                  <div class="ps-column">
+                    <span class="ps-label text-warning">Tantangan / Problem:</span>
+                    <p>Kebutuhan sistem pemilihan suara yang memiliki verifikasi berjenjang agar terbebas dari manipulasi, mampu memproses ribuan data pemilih sekaligus, dan tahan terhadap manipulasi parameter akses publik.</p>
+                  </div>
+                  <div class="ps-column">
+                    <span class="ps-label text-success">Solusi Teknis:</span>
+                    <p>Membangun sistem autentikasi admin berjenjang ("dua kunci"), pemrosesan file Excel menggunakan <em>PhpSpreadsheet</em>, pencetakan bukti suara digital via <em>FPDF</em>, serta audit keamanan database menyeluruh.</p>
+                  </div>
+                </div>
+
+                <!-- Security Hardening Highlights -->
+                <div class="security-highlights">
+                  <h4 class="security-title">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    Penerapan & Perbaikan Keamanan Sistem:
+                  </h4>
+                  <ul class="security-list">
+                    <li><strong>Mitigasi SQL Injection:</strong> Mengganti seluruh query SQL mentah menggunakan <em>prepared statements</em> via ekstensi <code>mysqli</code>.</li>
+                    <li><strong>Perbaikan Celah IDOR:</strong> Mengamankan proses verifikasi hak unduh berkas PDF bukti suara dari manipulasi ID pemilih.</li>
+                    <li><strong>Perlindungan Rute & Sesi:</strong> Menutup rute internal yang terbuka dengan middleware pengecekan otorisasi login dan penanganan <em>session timeout</em>.</li>
+                    <li><strong>Isolasi Kredensial:</strong> Memisahkan parameter koneksi database ke berkas <code>.env</code> yang tidak dapat diakses secara publik.</li>
+                    <li><strong>Restrukturisasi Skema:</strong> Memperbaiki dan merapikan integritas relasi tabel pada <code>database/schema.sql</code>.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Project Sidebar Details -->
+              <div class="project-side-meta">
+                <div class="meta-box">
+                  <h4 class="meta-title">Teknologi yang Digunakan</h4>
+                  <div class="tech-tags">
+                    <span class="tag">PHP (Native MVC)</span>
+                    <span class="tag">MySQL</span>
+                    <span class="tag">mysqli</span>
+                    <span class="tag">PhpSpreadsheet</span>
+                    <span class="tag">FPDF</span>
+                    <span class="tag">.env</span>
+                    <span class="tag">Laragon</span>
+                  </div>
+                </div>
+
+                <div class="meta-box">
+                  <h4 class="meta-title">Hasil Implementasi</h4>
+                  <p class="result-text">
+                    Berhasil digunakan pada pemungutan suara pemilihan umum himpunan kampus, mencatatkan proses import data pemilih tanpa duplikasi dan proses audit suara yang terverifikasi.
+                  </p>
+                </div>
+
+                <div class="meta-box project-actions">
+                  <a href="#contact" class="btn btn-outline btn-block" id="evoting-github-btn">
+                    <span>Lihat Repository</span>
+                    <span class="tag-status">Belum Diisi</span>
+                  </a>
+                  <button class="btn btn-secondary btn-block code-toggle-btn" data-target="evoting-code-diff">
+                    <span>Lihat Contoh Refactor Kode</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Expandable Code Comparison (Recruiter Proof) -->
+            <div class="code-diff-container hidden" id="evoting-code-diff">
+              <div class="diff-header">
+                <span class="diff-title">Perbandingan Keamanan: SQL Mentah vs Prepared Statement</span>
+                <span class="diff-badge">Security Refactoring</span>
+              </div>
+              <div class="diff-columns">
+                <div class="diff-pane diff-before">
+                  <span class="diff-label">Sebelum (Rentan SQL Injection)</span>
+                  <pre><code><span class="c-comment">// QUERY RENTAN:</span>
+<span class="c-var">$query</span> = <span class="c-str">"SELECT * FROM voters WHERE nim = '</span><span class="c-var">$nim</span><span class="c-str">'"</span>;
+<span class="c-var">$result</span> = <span class="c-var">$db</span>-&gt;<span class="c-func">query</span>(<span class="c-var">$query</span>);</code></pre>
+                </div>
+                <div class="diff-pane diff-after">
+                  <span class="diff-label">Sesudah (Aman dengan Prepared Statement)</span>
+                  <pre><code><span class="c-comment">// QUERY AMAN:</span>
+<span class="c-var">$stmt</span> = <span class="c-var">$db</span>-&gt;<span class="c-func">prepare</span>(<span class="c-str">"SELECT id, nim, has_voted FROM voters WHERE nim = ?"</span>);
+<span class="c-var">$stmt</span>-&gt;<span class="c-func">bind_param</span>(<span class="c-str">"s"</span>, <span class="c-var">$nim</span>);
+<span class="c-var">$stmt</span>-&gt;<span class="c-func">execute</span>();
+<span class="c-var">$voter</span> = <span class="c-var">$stmt</span>-&gt;<span class="c-func">get_result</span>()-&gt;<span class="c-func">fetch_assoc</span>();</code></pre>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 2: IOT ESP32 RUNNING TEXT & EMBEDDED SERVER -->
+          <article class="project-card" id="project-iot-server">
+            <div class="project-badge-row">
+              <span class="project-pill-iot">Embedded Web Server & IoT</span>
+              <span class="project-pill">Proyek Praktikum & Hardware</span>
+            </div>
+
+            <div class="project-body-grid">
+              <div class="project-main-info">
+                <h3 class="project-title">Embedded Web Server & Controller Running Text ESP32</h3>
+                <p class="project-role-badge">
+                  <strong>Peran Saya:</strong> Perancangan Sistem, Wiring Hardware, dan Pemrograman Firmware (End-to-End)
+                </p>
+                <p class="project-summary">
+                  Sistem kendali perangkat IoT yang menggabungkan <em>embedded HTTP server</em> pada ESP32 dengan modul LED Dot Matrix 8x8 dan sensor ultrasonik. Halaman web pemutar lagu disimpan dan disajikan langsung dari memori ESP32, dengan sinkronisasi teks lirik dan interaksi sensor jarak.
+                </p>
+
+                <div class="problem-solution-box">
+                  <div class="ps-column">
+                    <span class="ps-label text-warning">Tantangan:</span>
+                    <p>Menyajikan halaman web mandiri dari mikrokontroler dengan keterbatasan memori (RAM), sekaligus mengontrol display matrix secara *real-time* tanpa membuat respon audio atau sensor mengalami *stutter*.</p>
+                  </div>
+                  <div class="ps-column">
+                    <span class="ps-label text-success">Solusi Teknis:</span>
+                    <p>Mengoptimalkan alokasi buffer HTTP server di ESP32, merancang alur logika pembacaan jarak sensor ultrasonik, dan memprogram sinkronisasi running text lirik lagu saat pemutaran aktif.</p>
+                  </div>
+                </div>
+
+                <div class="features-list-block">
+                  <h4 class="features-title">Fitur & Karakteristik Utama:</h4>
+                  <ul class="clean-bullets">
+                    <li><strong>Embedded Web Server:</strong> Web pemutar musik disajikan langsung dari ESP32 tanpa perantara web server eksternal.</li>
+                    <li><strong>Sinkronisasi Teks & Audio:</strong> Menampilkan potongan lirik dari 2 lagu pada LED Dot Matrix 8x8 saat musik diputar di web.</li>
+                    <li><strong>Pemicu Interaktif Sensor Ultrasonik:</strong> Saat mendeteksi objek mendekat pada jarak tertentu, display menampilkan teks responsif "oke bos".</li>
+                    <li><strong>Evolusi Desain:</strong> Rancangan awal menggunakan potensiometer berevolusi menjadi kontrol berbasis web dan sensor otomatis.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Project Sidebar Details -->
+              <div class="project-side-meta">
+                <div class="meta-box">
+                  <h4 class="meta-title">Teknologi Hardware & Software</h4>
+                  <div class="tech-tags">
+                    <span class="tag">ESP32</span>
+                    <span class="tag">Embedded Web Server</span>
+                    <span class="tag">C / C++</span>
+                    <span class="tag">Arduino IDE</span>
+                    <span class="tag">LED Dot Matrix 8x8</span>
+                    <span class="tag">Sensor Ultrasonik</span>
+                  </div>
+                </div>
+
+                <div class="meta-box">
+                  <h4 class="meta-title">Status & Hasil</h4>
+                  <p class="result-text text-success">
+                    ✓ Sistem terpasang, teruji pada praktikum, dan seluruh modul (server web, sensor jarak, display teks) berfungsi sesuai spesifikasi.
+                  </p>
+                </div>
+
+                <!-- Interactive Hardware Simulator Widget -->
+                <div class="meta-box iot-simulator-box">
+                  <h4 class="meta-title">Simulasi Respon Sensor (Demo Interaktif)</h4>
+                  <div class="sim-controls">
+                    <label for="sensor-slider" class="sim-label">Jarak Objek Sensor Ultrasonik: <span id="dist-val" class="highlight-code">35 cm</span></label>
+                    <input type="range" id="sensor-slider" min="5" max="60" value="35" class="sim-range">
+                  </div>
+                  <div class="dot-matrix-display" id="dot-matrix-screen">
+                    <span class="matrix-text" id="matrix-display-text">LIRIK LAGU SEDANG BERJALAN...</span>
+                  </div>
+                  <span class="sim-hint">Geser slider ke bawah 15 cm untuk melihat respon teks "oke bos".</span>
+                </div>
+
+                <div class="meta-box project-actions">
+                  <a href="#contact" class="btn btn-outline btn-block" id="esp32-github-btn">
+                    <span>Lihat Kode Firmware</span>
+                    <span class="tag-status">Belum Diisi</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE SECTION -->
+    <section class="section experience-section" id="experience">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">04. Rekam Jejak</span>
+          <h2 class="section-title">Pengalaman</h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="timeline">
+          <!-- Timeline Item 1 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-role">Backend & Database Developer</h3>
+                  <span class="timeline-org">Organisasi Himpunan Mahasiswa Kampus</span>
+                </div>
+                <span class="timeline-badge">Proyek Aplikasi</span>
+              </div>
+              <p class="timeline-desc">
+                Mengembangkan dan memperkuat aplikasi web e-voting menggunakan arsitektur PHP MVC mandiri untuk penyelenggaraan pemungutan suara mahasiswa.
+              </p>
+              <ul class="timeline-bullets">
+                <li>Merancang skema database MySQL dan mengimplementasikan seluruh query dengan <em>prepared statements</em>.</li>
+                <li>Membangun fitur impor pemilih massal format Excel dengan <em>PhpSpreadsheet</em> dan ekspor tanda terima suara format PDF via <em>FPDF</em>.</li>
+                <li>Melakukan audit celah keamanan (menutup akses rute tanpa login, mitigasi IDOR, isolasi file <code>.env</code>).</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Timeline Item 2 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-role">Pengembang Sistem Embedded & IoT</h3>
+                  <span class="timeline-org">Praktikum Teknik Rekayasa Internet (PENS)</span>
+                </div>
+                <span class="timeline-badge">Praktikum Akademik</span>
+              </div>
+              <p class="timeline-desc">
+                Merancang perangkat keras, wiring, dan pemrograman logika mikrokontroler ESP32 untuk berbagai kebutuhan komunikasi data dan antarmuka web.
+              </p>
+              <ul class="timeline-bullets">
+                <li>Mengembangkan embedded web server langsung pada ESP32 untuk kontrol multimedia dan sinkronisasi tampilan display matrix.</li>
+                <li>Mengintegrasikan sensor ultrasonik dan modul RFID dengan mikrokontroler.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION SECTION -->
+    <section class="section education-section" id="education">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">05. Akademik</span>
+          <h2 class="section-title">Pendidikan</h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="education-card">
+          <div class="edu-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          </div>
+          <div class="edu-content">
+            <div class="edu-header">
+              <div>
+                <h3 class="edu-degree">S1 / D4 Teknik Rekayasa Internet</h3>
+                <h4 class="edu-campus">Politeknik Elektronika Negeri Surabaya (PENS)</h4>
+              </div>
+              <span class="edu-status-pill">Mahasiswa Aktif</span>
+            </div>
+            <p class="edu-desc">
+              Program studi yang memadukan rekayasa jaringan internet, transmisi data, sistem tertanam (<em>embedded systems</em>), serta rekayasa perangkat lunak backend untuk mendukung ekosistem komputasi modern dan Internet of Things.
+            </p>
+            <div class="edu-courses">
+              <span class="course-tag">Jaringan Komputer & Protokol</span>
+              <span class="course-tag">Sistem Tertanam (Embedded)</span>
+              <span class="course-tag">Basis Data & Rekayasa Web</span>
+              <span class="course-tag">Internet of Things (IoT)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">06. Hubungi</span>
+          <h2 class="section-title">Mari Terhubung</h2>
+          <p class="section-desc">Terbuka untuk diskusi kesempatan kerja, magang, atau proyek kolaborasi di bidang Backend Development dan Embedded Systems.</p>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-card contact-info-card">
+            <h3 class="contact-heading">Saluran Komunikasi</h3>
+            <p class="contact-subtext">Silakan hubungi saya melalui email atau lihat aktivitas kode saya di media sosial berikut:</p>
+
+            <div class="contact-channels">
+              <div class="contact-item">
+                <div class="channel-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </div>
+                <div class="channel-content">
+                  <span class="channel-label">Email</span>
+                  <div class="channel-value-row">
+                    <span class="channel-value" id="email-address-text">[Belum diisi: email@anda.com]</span>
+                    <button class="copy-btn" id="copy-email-btn" title="Salin Email">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                      <span class="btn-text">Salin</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="channel-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </div>
+                <div class="channel-content">
+                  <span class="channel-label">GitHub</span>
+                  <a href="#" class="channel-link" id="github-link" target="_blank" rel="noopener">github.com/[Belum diisi]</a>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="channel-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                </div>
+                <div class="channel-content">
+                  <span class="channel-label">LinkedIn</span>
+                  <a href="#" class="channel-link" id="linkedin-link" target="_blank" rel="noopener">linkedin.com/in/[Belum diisi]</a>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="channel-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div class="channel-content">
+                  <span class="channel-label">Domisili</span>
+                  <span class="channel-value">Surabaya, Jawa Timur, Indonesia</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Message Card -->
+          <div class="contact-card contact-form-card">
+            <h3 class="contact-heading">Kirim Pesan Singkat</h3>
+            <p class="contact-subtext">Formulir ini akan menyiapkan draft email langsung ke alamat saya.</p>
+
+            <form id="contact-form" class="clean-form">
+              <div class="form-group">
+                <label for="contact-name">Nama Anda</label>
+                <input type="text" id="contact-name" class="form-input" placeholder="Masukkan nama Anda / recruiter" required>
+              </div>
+              <div class="form-group">
+                <label for="contact-subject">Subjek / Topik</label>
+                <input type="text" id="contact-subject" class="form-input" placeholder="Peluang Kerja / Diskusi Proyek" required>
+              </div>
+              <div class="form-group">
+                <label for="contact-message">Pesan</label>
+                <textarea id="contact-message" class="form-input" rows="4" placeholder="Tuliskan pesan Anda di sini..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block" id="send-message-btn">
+                <span>Buka Aplikasi Email & Kirim</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-left">
+        <span class="footer-logo">&lt;/&gt; DevPortfolio</span>
+        <p class="footer-copy">Portofolio profesional Backend Developer & Embedded Systems.</p>
+      </div>
+      <div class="footer-right">
+        <p class="footer-campus">S1 Teknik Rekayasa Internet — PENS Surabaya</p>
+        <span class="footer-year">© 2026. Seluruh hak cipta dilindungi.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
