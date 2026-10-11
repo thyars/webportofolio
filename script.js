@@ -181,7 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const subject = document.getElementById('contact-subject').value;
       const message = document.getElementById('contact-message').value;
 
-      const mailtoUrl = `mailto:email@anda.com?subject=${encodeURIComponent(`[Portofolio] ${subject} - ${name}`)}&body=${encodeURIComponent(message)}`;
+      const mailtoUrl = `mailto:annastio09876@gmail.com?subject=${encodeURIComponent(`[Portofolio] ${subject} - ${name}`)}&body=${encodeURIComponent(message)}`;
       
       showToast('Membuka aplikasi email Anda...');
       setTimeout(() => {
@@ -283,7 +283,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       contact: () => `
         <div class="cli-res-title">Saluran Komunikasi:</div>
-        <div class="cli-res-item"><strong>Email:</strong> [email@anda.com]</div>
+        <div class="cli-res-item"><strong>Email:</strong> annastio09876@gmail.com</div>
+        <div class="cli-res-item"><strong>GitHub:</strong> https://github.com/thyars</div>
         <div class="cli-res-item"><strong>Kampus:</strong> PENS Surabaya, Indonesia</div>
         <div class="cli-res-item"><strong>Status:</strong> Terbuka untuk kesempatan kerja &amp; magang Backend Developer</div>
         <div class="cli-res-item cli-text-muted">Gunakan section Kontak di bawah untuk form langsung.</div>
